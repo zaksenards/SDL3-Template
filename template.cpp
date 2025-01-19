@@ -3,7 +3,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 
-#define APP_TITLE "Lifez"
+#define APP_TITLE "SDL Template"
 
 struct Window
 {
