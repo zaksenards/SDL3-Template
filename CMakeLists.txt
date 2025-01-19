@@ -13,20 +13,7 @@ target_link_libraries(SDLTemplate SDL3.lib)
 
 add_custom_command(
     TARGET SDLTemplate POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory 
-    ${CMAKE_SOURCE_DIR}/bin
-)
-
-add_custom_command(
-    TARGET SDLTemplate POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-        $<TARGET_FILE:SDLTemplate>
-        ${CMAKE_SOURCE_DIR}/bin/SDLTemplate.exe
-)
-
-add_custom_command(
-    TARGET SDLTemplate POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-        ${SDL3_LIB_PATH}/SDL3.dll
-        ${CMAKE_SOURCE_DIR}/bin/SDL3.dll
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:SDLTemplate> ${CMAKE_SOURCE_DIR}/bin/SDLTemplate.exe
+    COMMAND ${CMAKE_COMMAND} -E copy ${SDL3_LIB_PATH}/SDL3.dll ${CMAKE_SOURCE_DIR}/bin/SDL3.dll
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/bin        
 )
